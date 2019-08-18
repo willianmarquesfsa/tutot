@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:tutor/year_view.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -26,16 +26,21 @@ class MyApp extends StatelessWidget {
           appBar: AppBar(
             bottom: TabBar(
               tabs: [
-                Tab(icon: Icon(Icons.directions_car)),
-                Tab(icon: Icon(Icons.directions_transit)),
-                Tab(icon: Icon(Icons.directions_bike)),
+                Tab(icon: Text("Ano")),
+                Tab(icon: Text("Mês")),
+                Tab(icon: Text("Dia")),
               ],
             ),
             title: Text('Tabs Demo'),
           ),
           body: TabBarView(
             children: [
-              Icon(Icons.directions_car),
+              //Icon(Icons.directions_car),
+              YearView(
+                year: 1999,
+                context: context,
+                currentDateColor: Colors.blue[200],
+              ),
               Icon(Icons.directions_transit),
               Icon(Icons.directions_bike),
             ],
